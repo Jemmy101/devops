@@ -1,4 +1,5 @@
 name: HTML LINT Check
+
 on:
   push:
     branches: 
@@ -11,9 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -uses: actions/checkout@v3
-      -name: Install HTML Hint
-      run: npm install -g htmlhint
+      - uses: actions/checkout@v3
 
-      -name: Run html-hint
-      run: htmlhint "**/*.html"
+      - name: Install HTMLHint
+        run: npm install -g htmlhint
+
+      - name: Run htmlhint
+        run: htmlhint "**/*.html"
